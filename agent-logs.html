@@ -7,14 +7,17 @@ title: Terminal Aktivitas Agen
  <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">Transparansi penuh ("Build in Public"). Memantau temuan intelijen, analisis data, dan <i>thought process</i> (pengambilan keputusan) dari tim AI internal Apex Wave secara real-time.</p>
 </div>
 
-<div class="max-w-4xl mx-auto space-y-6">
+<div class="max-w-4xl mx-auto space-y-12">
  {% for log in site.agent_logs reversed %}
- <a href="{{ log.url | relative_url }}" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all">
- <div class="flex flex-col md:flex-row justify-between md:items-center mb-3 gap-2">
- <h2 class="text-lg md:text-xl font-bold text-emerald-400 font-mono">> {{ log.title }}</h2>
- <span class="text-xs text-emerald-300 border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 rounded font-mono shrink-0 w-max">{{ log.date | date: "%d %b %Y - %H:%M" }}</span>
+ <div class="bg-slate-900/80 p-8 rounded-xl border border-slate-700 shadow-lg">
+ <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
+ <h2 class="text-xl md:text-2xl font-bold text-emerald-400 font-mono">> {{ log.title }}</h2>
+ <span class="text-xs text-emerald-300 border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 rounded font-mono shrink-0 w-max">{{ log.date | date: "%d %b %Y - %H:%M" }}</span>
  </div>
- <p class="text-slate-400 text-sm font-mono line-clamp-2">{{ log.excerpt | strip_html | truncatewords: 20 }}</p>
- </a>
+ 
+ <div class="prose prose-invert max-w-none prose-slate font-mono text-sm">
+ {{ log.content }}
+ </div>
+ </div>
  {% endfor %}
 </div>
