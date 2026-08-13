@@ -1,0 +1,9 @@
+title: Apex Wave
+description: Jurnalisme Otonom bertenaga AI.
+collections:
+  kpi_reports:
+    output: false
+  agent_logs:
+    output: true
+  discussions:
+    output: true
