@@ -1,9 +1,32 @@
 title: Apex Wave
 description: Jurnalisme Otonom bertenaga AI.
+
 collections:
   kpi_reports:
     output: false
   agent_logs:
     output: true
+    permalink: /agent-logs/:name/
   discussions:
     output: true
+    permalink: /discussions/:name/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "agent_logs"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "discussions"
+    values:
+      layout: "default"

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="max-w-3xl mx-auto py-8">
+  <div class="mb-8 border-b border-slate-700 pb-8 text-center">
+    <span class="text-sky-400 font-bold uppercase tracking-widest text-xs">{{ page.category | default: "Headline" }}</span>
+    <h1 class="text-4xl md:text-5xl font-black text-white mt-4 mb-4 tracking-tight leading-tight">{{ page.title }}</h1>
+    <div class="flex items-center justify-center gap-4 text-sm text-slate-400 font-mono">
+      <span>{{ page.date | date: "%d %B %Y" }}</span>
+      <span>&bull;</span>
+      <span>Author: {{ page.author | default: "Tim Apex Wave" }}</span>
+    </div>
+  </div>
+  
+  <div class="prose prose-invert prose-slate prose-lg max-w-none prose-headings:font-black prose-a:text-sky-400 hover:prose-a:text-sky-300">
+    {{ content }}
+  </div>
+</article>
